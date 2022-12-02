@@ -1,0 +1,115 @@
+
+<div class="container px-0">
+    <div class="row row-cols-3 mb-3">
+        <div class="col">
+            <div class="card border-primary shadow card-height">
+                <div class="card-body py-2">
+                    <div class="col px-0 d-flex justify-content-start line-height-1rem text-dark-blue"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="row g-0 text-dark-blue font-size-3rem">
+                        <div class="col text-center">
+                            <div class="font-size-subtitle" id="weekday">Monday</div>
+                            <div class="font-size-title" id="day">11</div>
+                            <div class="font-size-subtitle" id="month">Jul.</div>
+                        </div>
+                        <div class="col d-flex align-items-center">
+                                <span class="font-size-colspan">
+                                    <span id="hour" class="font-size-inherit">00</span>:<span id="minutes"  class="font-size-inherit">00</span>
+                                </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-dark shadow card-height">
+                <div class="card-body py-2">
+                    <div class="text-center">
+                        <div class="col px-0 d-flex justify-content-start line-height-1rem"><i class="fas fa-temperature-low"></i></div>
+                        <div class="row g-0">
+                            <div class="col">
+                                <div class=" text-warning"><i class="wi wi-day-sunny font-size-3rem" id="weather-icon" data-weather-type="wi-day-sunny"></i></div>
+                                <div class="font-size-2rem" id="temperature"> 30</div>
+                            </div>
+                            <div class="col">
+                                <div class="font-size-15rem pt-1">
+                                    <span class="text-danger font-size-inherit" ><span class="font-size-inherit" id="t-max">33</span><sup>°C</sup></span>
+                                    <span class="split-line"></span>
+                                    <span class="text-primary font-size-inherit" ><span class="font-size-inherit" id="t-min">26</span><sup>°C</sup></span>
+                                </div>
+                                <div class="font-size-15rem pt-3"><i class="fas fa-cloud-rain font-size-inherit"></i><span class="ms-2  font-size-inherit" id="raining-rate">4</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-success shadow card-height" id="alert-border" data-alert-type="success">
+                <div class="card-body py-2">
+                    <div class="text-green" id="alert-div">
+                        <div class="text-left line-height-1rem">Usage Alert</div>
+                        <div class="row g-0">
+                            <div class="col" id="user-alert-state">
+                                <div class="text-center my-2"><i class="fas fa-check-circle text-big-icon" id="alert-icon"></i></div>
+        <!--                        <div class="text-center my-2"><i class="fas fa-exclamation-triangle text-big-icon"></i></div>-->
+                                <div class="text-center font-size-subtitle" id="alert-note">Safety</div>
+                            </div>
+                            <div class="col pt-1 ms-3">
+                                <div class="">Upper Limit</div>
+                                <div class="font-size-3rem" id="upper-limit">450 <span>kW</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-0">
+        <div class="col-3 px-2 row g-0 gy-2 mb-4 mt-0">
+            <div class="card shadow card-height mt-0 mb-2">
+                <div class="card-body py-2 d-flex align-items-center">
+                    <div class="col text-center">
+                        <div class="text-warning"><i class="fas fa-bolt text-big-icon"></i></div>
+                        <div class="font-size-2rem"><span class="font-size-inherit px-2" id="current-demand">250</span> kw</div>
+                        <div class="">Max Demand: <span class="font-size-inherit px-2" id="max-demand">300</span> kw</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow card-height mt-2">
+                <div class="card-body py-2 d-flex align-items-center">
+                    <div class="col text-center">
+                        <div class="text-warning"><i class="fas fa-dollar-sign text-big-icon"></i></div>
+                        <div class=""><span class="font-size-2rem px-2">330</span>TWD</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow mb-4">
+                <!-- 預測版面 [B] -->
+                <div class="card-body">
+                    <figure class="highcharts-figure">
+                        <div id="container"></div>
+                    </figure>
+                </div>
+            </div>
+            <!-- 預測版面 [E] -->
+        </div>
+    </div>
+</div>
+
+<link type="text/css" rel="stylesheet" href="../../css/weather-icons-master/css/weather-icons.css" />
+<link type="text/css" rel="stylesheet" href="/web/css/Dashboard.css?ts=1" />
+
+<script type="text/javascript">
+	dashboard_type = '{dashboardType}';
+    demandInfo = {demandInfo};
+    allForecastDataList = {allForecastDataList};
+</script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="/web/js/Dashboard.js?v=::version::"></script>

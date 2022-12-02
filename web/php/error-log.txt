@@ -1,0 +1,2 @@
+'SELECT `prediction_1`, `prediction_2`, `prediction_3`, `prediction_4`, `created_at` FROM vanilla_demand_predict_self_attention_1min WHERE `created_at` >= \'2020-05-24\' AND `created_at` <= \'2020-05-25\' ORDER BY `created_at` DESC'
+'SELECT `prediction_1`, `prediction_2`, `prediction_3`, `prediction_4`, `created_at` FROM vanilla_demand_predict_self_attention_1min WHERE `created_at` >= \'2021-05-24\' AND `created_at` <= \'2021-05-25\' ORDER BY `created_at` DESC'

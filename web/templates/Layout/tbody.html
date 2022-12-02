@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{Title}</title>
+
+    <link href="/css/fontawesome/5.15.3/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/sidebar-template/side-bar-basic.css" rel="stylesheet">
+    <link rel="shortcut icon" href="#">
+    <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="/css/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.tmpl-Beta1.0.0.js"></script>
+    <script type="text/javascript" src="/js/moment-with-locales.js"></script>
+
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <li>
+            <div class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+				<form id='change-dashboard-type' method="POST" action="./?a=Dashboard">
+                <select class="form-class" id="dashboard-type" name='dashboard-type'>
+					  <option id='option-demand' selected='false' value='demand'>Demand Dashboard</option>
+					  <option id='option-london' selected='true' value='london'>Energy Dashboard</option>
+				</select>
+				</form>
+            </div>
+            </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item {menu/Dashboard/active} {Dashboard}">
+                <a class="nav-link" href="./?a=Dashboard">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+			<div class="sidebar-heading">
+                歷史預測記錄
+            </div>
+            <li class="nav-item {menu/DemandReport/active} {DemandReport}">
+                <a class="nav-link" href="./?a=DemandReport">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>模型比較</span>
+                </a>
+            </li>
+			<li class="nav-item {menu/PredictUpdateReport/active} {PredictUpdateReport}">
+                <a class="nav-link" href="./?a=PredictUpdateReport">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>模型更新預測狀況</span>
+                </a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+<!--                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow px-3">-->
+
+<!--                    &lt;!&ndash; Sidebar Toggle (Topbar) &ndash;&gt;-->
+<!--                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">-->
+<!--                        <i class="fa fa-bars"></i>-->
+<!--                    </button>-->
+
+<!--                    &lt;!&ndash; Breadcrumb &ndash;&gt;-->
+<!--                    <ul class="navbar-nav me-auto">-->
+
+<!--                    </ul>-->
+
+
+<!--                    &lt;!&ndash; Topbar Navbar &ndash;&gt;-->
+<!--&lt;!&ndash;                    <ul class="navbar-nav ms-auto">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        &lt;!&ndash; Nav Item - User Information &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="nav-item dropdown no-arrow">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a class="navbar-brand dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <i class="fas fa-user"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{Username}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash; Dropdown - User Information &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="dropdown-menu dropdown-menu-end shadow animated&#45;&#45;grow-in" aria-labelledby="userDropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a class="dropdown-item" href="./?a=UserSetting">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    個人頁面&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a class="dropdown-item" href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    Settings&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a class="dropdown-item" href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    Activity Log&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="dropdown-divider"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a class="dropdown-item" href="./?a=Admin/Logout" data-toggle="modal" data-target="#logoutModal">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    登出&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    </ul>&ndash;&gt;-->
+
+<!--                </nav>-->
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid py-2">
+                    {Content}
+                </div>
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript">
+		$(function () {
+			dashboard_type = '{dashboardType}';
+			not_dashboard_type = '{notDashboardTypeName}';
+			console.info($('#option-' + dashboard_type));
+			$('#option-' + dashboard_type).attr("selected",true);
+			$('#option-' + not_dashboard_type).attr("selected",false);
+			$('#change-dashboard-type').change(function() {
+				$('#change-dashboard-type').submit();
+			});
+		});
+	</script>
+</body>
+
+</html>
